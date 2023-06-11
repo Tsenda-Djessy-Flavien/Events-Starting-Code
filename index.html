@@ -19,13 +19,30 @@
     <section id="events">
       <h2>Events in Action</h2>
       <button v-on:click="increment(10)">Add + 10</button>
-      <button v-on:click="decrement(5)">Remove - 5</button>
+      <button v-on:click.right="decrement(5)">Remove - 5</button>
       <!-- <button v-on:click="counter = counter + 1">Add</button>
       <button v-on:click="counter--">Remove</button> -->
       <p>Result: {{ counter }}</p>
       <!-- <input type="text" v-on:input="setName"> -->
-      <input type="text" v-on:input="setName($event, 'TSENDA')">
-      <p>Your name is : {{ name }}</p>
+      <label>
+        lorsqu'on appuie sur la touche entrer du clavien
+        <input
+          type="text"
+          v-on:input="setName($event, 'TSENDA')"
+          v-on:keyup.enter="submitInput"
+        />
+      </label>
+      <p>Your name is : {{ confirmName }}</p>
+      <!-- 1 Methods
+      <form v-on:submit="submitForm">
+        <input type="text">
+        <button>Sign up</button>
+      </form> -->
+      <!-- 2 Methods -->
+      <form v-on:submit.prevent="submitForm">
+        <input type="text" />
+        <button>Sign up</button>
+      </form>
     </section>
   </body>
 </html>
