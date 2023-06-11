@@ -7,11 +7,11 @@ const app = createApp({
     }
   },
   methods:  {
-    increment() {
-      this.counter++; // this.counter = this.counter + 1;
+    increment(num) {
+      this.counter = this.counter + num;
     },
-    decrement() {
-      this.counter--;
+    decrement(num) {
+      this.counter = this.counter - num;;
     },
   },
 });
