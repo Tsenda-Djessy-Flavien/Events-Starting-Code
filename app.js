@@ -8,7 +8,7 @@ const app = createApp({
   },
   methods:  {
     increment() {
-      this.counter++;
+      this.counter++; // this.counter = this.counter + 1;
     },
     decrement() {
       this.counter--;
